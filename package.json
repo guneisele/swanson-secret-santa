@@ -1,0 +1,11 @@
+{
+  "name": "secret-santa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A cute, static Secret Santa draw-and-text app.",
+  "scripts": {
+    "test": "node --test draw.test.js codec.test.js",
+    "start": "python3 -m http.server 4173"
+  }
+}

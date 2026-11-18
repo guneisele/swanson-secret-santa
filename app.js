@@ -13,28 +13,37 @@ const STORAGE_KEY = "swanson-secret-santa-v1";
 const DEFAULT_TITLE = "The Swanson Family Secret Santa 2026";
 
 const HAT_SVG = `<svg class="santa-hat" viewBox="0 0 64 56" aria-hidden="true">
-  <path d="M10 36 Q18 4 54 16 Q40 8 22 36Z" fill="#9A1B2C"/>
-  <ellipse cx="22" cy="40" rx="16" ry="8" fill="#FFF6E8"/>
-  <circle cx="54" cy="14" r="8" fill="#FFF6E8"/>
+  <path d="M10 40 C10 22, 22 8, 38 8 C48 8, 55 13, 56 22 C50 17, 44 18, 42 24 C40 30, 41 35, 44 40 Z" fill="#9A1B2C"/>
+  <path d="M20 22 C25 14, 32 11, 40 11" fill="none" stroke="#fff" stroke-opacity="0.25" stroke-width="3" stroke-linecap="round"/>
+  <rect x="5" y="36" width="44" height="12" rx="6" fill="#FFF6E8"/>
+  <circle cx="56" cy="23" r="6.5" fill="#FFF6E8"/>
 </svg>`;
 
 const ORNAMENT = (color, cls) => `<svg class="ornament ${cls}" viewBox="0 0 22 30" aria-hidden="true">
-  <rect x="9" y="2" width="4" height="5" rx="1" fill="#C9A227"/>
-  <path d="M11 2 C11 0, 14 0, 15 3" fill="none" stroke="#C9A227" stroke-width="1.5"/>
-  <circle cx="11" cy="18" r="9" fill="${color}"/>
-  <circle cx="8" cy="15" r="3" fill="#fff" opacity="0.35"/>
+  <path d="M11 4 C11 0.5, 14.5 0.5, 14.5 3" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="8" y="5" width="6" height="5" rx="1.2" fill="#C9A227"/>
+  <circle cx="11" cy="19" r="9" fill="${color}"/>
+  <path d="M2.6 17.5 Q11 21 19.4 17.5" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="1.3"/>
+  <ellipse cx="7.6" cy="15" rx="2.4" ry="3" fill="#fff" opacity="0.4"/>
 </svg>`;
 
 const BOW_SVG = `<svg class="bow" viewBox="0 0 54 34" aria-hidden="true">
-  <ellipse cx="14" cy="18" rx="14" ry="10" fill="#F3D789"/>
-  <ellipse cx="40" cy="18" rx="14" ry="10" fill="#F3D789"/>
-  <rect x="22" y="10" width="10" height="16" rx="3" fill="#C9A227"/>
+  <path d="M25 18 L17 32 L21.5 31 L24 34 L28.5 19Z" fill="#E7C46A"/>
+  <path d="M29 18 L37 32 L32.5 31 L30 34 L25.5 19Z" fill="#E7C46A"/>
+  <path d="M27 16 C19 3, 4 3, 5 13 C6 23, 19 22, 27 16Z" fill="#F3D789"/>
+  <path d="M27 16 C35 3, 50 3, 49 13 C48 23, 35 22, 27 16Z" fill="#F3D789"/>
+  <path d="M25 15.5 C19 9, 11 8, 11 13 C11 17, 18 18, 25 15.5Z" fill="#C9A227" opacity="0.55"/>
+  <path d="M29 15.5 C35 9, 43 8, 43 13 C43 17, 36 18, 29 15.5Z" fill="#C9A227" opacity="0.55"/>
+  <rect x="22" y="11" width="10" height="11" rx="4" fill="#C9A227"/>
 </svg>`;
 
 const BELL_SVG = `<svg class="bell" viewBox="0 0 36 42" aria-hidden="true">
-  <path d="M18 4c-9 0-14 8-14 18 0 8 14 14 14 14s14-6 14-14C32 12 27 4 18 4z" fill="#C9A227"/>
-  <rect x="12" y="1" width="12" height="6" rx="2" fill="#F3D789"/>
-  <circle cx="18" cy="34" r="4" fill="#9A1B2C"/>
+  <circle cx="18" cy="5" r="3" fill="none" stroke="#C9A227" stroke-width="2"/>
+  <circle cx="18" cy="37" r="3.6" fill="#9A1B2C"/>
+  <path d="M18 7.5 C11 7.5, 9 13, 9 20 C9 26, 7.5 29.5, 4 32 L32 32 C28.5 29.5, 27 26, 27 20 C27 13, 25 7.5, 18 7.5Z" fill="#C9A227"/>
+  <rect x="3" y="30.5" width="30" height="4.5" rx="2.25" fill="#E2B93B"/>
+  <path d="M14 12 C12 15, 12 20, 12.5 25" fill="none" stroke="#FFF6E8" stroke-opacity="0.55" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M10 22 Q18 25 26 22" fill="none" stroke="#9A7A12" stroke-opacity="0.45" stroke-width="1.4"/>
 </svg>`;
 
 function newId() {

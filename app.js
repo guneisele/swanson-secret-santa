@@ -222,7 +222,7 @@ function renderBanner(title, editable) {
                role="textbox" aria-label="Family title" spellcheck="false">${escapeHtml(title)}</h1>`
           : `<h1 class="title-display">${escapeHtml(title)}</h1>`
       }
-      <p class="banner-sub">Draw names · Send texts · Keep the secret</p>
+      <p class="banner-sub">Ho ho ho! Let the merry mischief begin</p>
     </header>`;
 }
 
